@@ -1,0 +1,31 @@
+
+Memo Nomor 1695
+
+-Pemilihan Tipe 81,82, yg lainnya akan dihapus
+-Tampilan pada Master margin disamakan dengan tampilan SD4
+ Kolom tipe TMI ->  Jenis tmi
+ Kolom katogori, department, divisi -> Pakai kode
+-Tambahan Menu Upload file csv dimana template jenis/nama kolom sama dengan menu ubah master produk pada cms
+-Tambahan validasi/jagaan 10% dari total produk saran di android
+-Tambahan Menu untuk persiapan input kode member, mencari member dan memprores arsip item per member
+-Tambahan Fitur filter pada android ditambah berdasarkan jenis saran, arsip & wajib
+
+Wajib semua produk harus main
+Saran bisa iya bisa nga
+Arsip sifatnya rekomendasi, bisa di jual tp ga bisa di order
+
+Tambahan Fitur upload data sesuai dengan apa yang diinginkan operasional
+Rekoemdasi upload produk per cabang dan pertipe
+
+Menu Edit
+Konversi
+MD
+TMI MIN max
+
+Upload file csv dimana jenis/nama kolom sama dengan ubah master produk
+Versi android di alat dibuat jagaan validasi 10%  dari total saran di alat
+di cms ga ada jagaan 10%
+
+Persiapan 1 menu untuk input kode member cari member dan memprores arsip item per member
+
+Filter pada android ditambah berdasarkan jenis saran arsip wajib

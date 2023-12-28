@@ -1,0 +1,56 @@
+<?php
+
+namespace App\Imports;
+
+use DB;
+use App\ProductCodeRejected;
+use App\TBranch;
+use Illuminate\Support\Collection;
+use Maatwebsite\Excel\Concerns\ToCollection;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+
+class PluTolakImport implements ToCollection, WithHeadingRow
+{
+    /**
+    * @param Collection $collection
+    */
+    public function collection(Collection $rows)
+    {
+        foreach ($rows as $row)
+        {
+            $idBranch = TBranch::where('tmi_database.branches.code','=',$row['branch_code'])
+            ->select('tmi_database.branches.id as idCabang')
+            ->first();
+             $plu_exists = ProductCodeRejected::withTrashed()
+            ->where('branch_id','=',$idBranch->idCabang)
+            ->where('plu','=',$row['plu'])
+            ->first();
+            if($plu_exists == null)
+            {
+                ProductCodeRejected::insert([
+                    'branch_id' => $idBranch->idCabang,
+                    'plu' => $row['plu']
+                ]);
+            }
+            else
+            {
+                if($plu_exists->deleted_at == null)
+                {
+                    ProductCodeRejected::where('branch_id','=',$idBranch->idCabang)
+                    ->where('plu','=',$row['plu'])
+                    ->update([
+                       'branch_id' => $idBranch->idCabang,
+                       'plu' => $row['plu']
+                    ]);
+                }
+                else
+                {
+                    ProductCodeRejected::withTrashed()
+                    ->find($plu_exists->id)
+                    ->restore();
+                }
+
+            }
+        }
+    }
+}

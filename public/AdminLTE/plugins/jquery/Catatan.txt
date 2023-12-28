@@ -1,0 +1,4 @@
+Hide Menu monitoring & laporan
+Menu margin ditambahin divisi,kategori,department,kodeplu (opsional)
+Cek info update min qty dan max qty pada review.blade
+Tamabh Info total data yang diinput berdasarkan jenis status saran, arsip, wajib, dan  null

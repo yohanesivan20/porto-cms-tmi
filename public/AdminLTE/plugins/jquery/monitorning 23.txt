@@ -1,0 +1,2 @@
+Penamaan route konsisten pakai bahasa inggris
+Penamaan Controller jika lebih dari 1 kata pakai strip (-)
